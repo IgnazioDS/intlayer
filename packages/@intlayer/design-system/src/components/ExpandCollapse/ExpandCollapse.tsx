@@ -122,6 +122,11 @@ export const ExpandCollapse: FC<ExpandCollapseProps> = ({
       isHidden={isCollapsed}
       minHeight={minHeight}
       className="w-full overflow-x-auto overflow-y-hidden"
+      style={{
+         gridTemplateRows: isCollapsed
+         ? `${minHeight}px`
+         : `${codeContainerHeight}px`,
+      }}
     >
       <div className={cn('grid w-full', className)} ref={codeContainerRef}>
         {children}
